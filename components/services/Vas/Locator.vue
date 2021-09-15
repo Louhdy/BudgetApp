@@ -2,9 +2,9 @@
   <v-card-text class="mt-0">
     <p>Especificaciones</p>
     <v-text-field
-      v-model="amountMessages"
-      label="Cantidad de mensajes al mes"
-      hint="Mínimo 3000 mensajes"
+      v-model="amountUsers"
+      label="Cantidad de usuarios"
+      hint="Mínimo 10 usuarios"
       persistent-hint
       outlined
       dense
@@ -36,34 +36,29 @@
 
 <script>
 export default {
-  name: "InstantMessaging",
+  name: "Locator",
   data() {
     return {
-      amountMessages: null,
+      amountUsers: null,
       pricing: [
         {
           id: 1,
-          name: 'Ver pricing :',
+          name: 'Ver pricing por licencia:',
           children: [
-            { id: 2, name: 'Hasta 5K :', price: 'S/.0.055'},
-            { id: 3, name: 'Más de 5K hasta 10K :', price: 'S/.0.050'},
-            { id: 4, name: 'Más de 10K hasta 25K :', price: 'S/.0.047'},
-            { id: 5, name: 'Más de 25K hasta 50K :', price: 'S/.0.045'},
-            { id: 6, name: 'Más de 50K hasta 100K :', price: 'S/.0.042'},
-            { id: 7, name: 'Más de 100K hasta 250K :', price: 'S/.0.040'},
-            { id: 8, name: 'Más de 250K hasta 500K :', price: 'S/.0.037'},
-            { id: 9, name: 'Más de 500K hasta 1MM :', price: 'S/.0.036'},
+            { id: 2, name: 'De 10 a 29 usuarios :', price: 'S/.22.00'},
+            { id: 3, name: 'De 30 a 99 usuarios :', price: 'S/.15.00'},
+            { id: 4, name: 'De 100 a 199 usuarios :', price: 'S/.10.00'},
+            { id: 5, name: 'De 200 a más usuarios :', price: 'S/.8.00'},
           ],
         },
       ],
-      units: ['KB', 'MB'],
     }
   },
   methods: {
     addService () {
       const serviceDetail1 =
-        { name: 'Cantidad de mensajes',
-          amount: this.amountMessages,
+        { name: 'Cantidad de usuarios',
+          amount: this.amountUsers,
         };
       const serviceDetail2 =
         { name: 'Contrato mínimo de',
@@ -74,7 +69,7 @@ export default {
       detail.push(serviceDetail2);
 
       const service = {
-        nameService: 'Mensajería instantánea',
+        nameService: 'Localizador',
         typeService: 'VAS',
         detailService: detail,
         priceService: null,
@@ -86,7 +81,5 @@ export default {
 </script>
 
 <style scoped>
-.price{
-  color: #535B6C;
-}
+
 </style>

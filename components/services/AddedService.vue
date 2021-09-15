@@ -28,8 +28,22 @@
           :key="idx"
         >
           <v-row>
+            <v-col class="ml-13">
+              {{item.name}} :
+            </v-col>
             <v-col>
-              {{item.name}} : {{item.amount}}
+              {{item.amount}}
+            </v-col>
+          </v-row>
+        </v-container>
+        <v-divider inset class="mr-12"/>
+        <v-container>
+          <v-row justify="space-between">
+            <v-col md="3" class="pb-0 ml-13">
+              <p><b>Total estimado:</b></p>
+            </v-col>
+            <v-col md="3" class="pr-2">
+              <p>S/. {{formatPrice(priceService)}}</p>
             </v-col>
           </v-row>
         </v-container>
@@ -39,6 +53,7 @@
 </template>
 
 <script>
+import {getPriceFormat} from "~/helpers/pricing";
 export default {
   name: "AddedService",
   props: {
@@ -53,6 +68,15 @@ export default {
     detailService: {
       type: Array,
       default: null,
+    },
+    priceService: {
+      type: Number,
+      default: null,
+    }
+  },
+  methods: {
+    formatPrice(price) {
+      return getPriceFormat(price);
     },
   }
 }

@@ -14,17 +14,23 @@
       ></v-select>
     </v-card-text>
     <v-divider class="mt-3"></v-divider>
-    <InstantMessaging v-if="selectedItem  === 'Mensajería instantánea'"></InstantMessaging>
+    <instant-messaging v-if="selectedItem  === 'Mensajería instantánea'"></instant-messaging>
+    <productivity-apps v-if="selectedItem === 'Apps de productividad'"></productivity-apps>
+    <locator v-if="selectedItem === 'Localizador'"></locator>
   </div>
 </template>
 
 <script>
 import InstantMessaging from "~/components/services/Vas/InstantMessaging";
+import ProductivityApps from "~/components/services/Vas/ProductivityApps";
+import Locator from "~/components/services/Vas/Locator";
 
 export default {
   name: "VasProducts",
   components: {
+    Locator,
     InstantMessaging,
+    ProductivityApps
   },
   data() {
     return {
@@ -35,7 +41,7 @@ export default {
         },
         {
           name: 'Apps de productividad',
-          content: 'ProductiviyApps',
+          content: 'ProductivityApps',
         },
         {
           name: 'Localizador',
