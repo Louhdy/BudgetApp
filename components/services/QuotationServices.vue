@@ -17,6 +17,7 @@
           :name-service="item.nameService"
           :detail-service="item.detailService"
           :price-service="item.priceService"
+          @deleteQuotation="deleteQuotation(idx)"
         />
       </v-container>
       <v-container v-if="services.length !== 0">
@@ -56,6 +57,9 @@ export default {
       },
       formatPrice(price) {
         return getPriceFormat(price);
+      },
+      deleteQuotation(index) {
+        this.$emit('deleteQuotation',index);
       },
     },
 }

@@ -5,7 +5,7 @@
     </page-title>
     <v-row>
       <type-services @addNewService="addService"/>
-      <quotation-services :services="newServices"/>
+      <quotation-services :services="newServices" @deleteQuotation="deleteQuotation"/>
     </v-row>
   </v-container>
 </template>
@@ -37,6 +37,9 @@ export default {
      }
      this.newServices.push(service);
     },
+    deleteQuotation (index) {
+      this.newServices.splice(index,1);
+    }
   },
 }
 </script>

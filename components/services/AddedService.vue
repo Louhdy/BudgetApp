@@ -9,7 +9,7 @@
           dense
           flat
         >
-          <v-btn class="ml-2" icon x-small>
+          <v-btn class="ml-2" icon x-small @click="deleteQuotation">
             <v-icon>mdi-close-thick</v-icon>
           </v-btn>
 
@@ -78,6 +78,9 @@ export default {
     formatPrice(price) {
       return getPriceFormat(price);
     },
+    deleteQuotation() {
+      this.$emit('deleteQuotation');
+    }
   }
 }
 </script>
