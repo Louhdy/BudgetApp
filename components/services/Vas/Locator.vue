@@ -35,7 +35,7 @@
       <v-container class="pa-0">
         <v-row justify="end">
           <v-col class="mr-3" md="2">
-            <v-btn class="mt-1" color="primary" @click="addService">Agregar</v-btn>
+            <add-button @addButton="addService"></add-button>
           </v-col>
         </v-row>
       </v-container>
@@ -46,8 +46,10 @@
 <script>
 
 import {amountUserRules} from "~/helpers/validation";
+import AddButton from "~/components/services/AddButton";
 export default {
   name: "Locator",
+  components: {AddButton},
   data() {
     return {
       valid: true,

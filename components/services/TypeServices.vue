@@ -1,12 +1,13 @@
 <template>
   <v-col>
-    <v-card elevation="1" outlined>
+    <v-card elevation="1" class="cardRounded" outlined>
       <v-card-text class="pb-0">
         Servicios
       </v-card-text>
       <v-tabs
         v-model="tabSelected"
         background-color="white"
+        color="secondary"
         centered
         light
         icons-and-text
@@ -20,7 +21,7 @@
         </v-tab>
       </v-tabs>
     </v-card>
-    <v-card class="mt-3">
+    <v-card class="mt-3 cardRounded">
       <v-tabs-items v-model="tabSelected">
         <v-tab-item
           v-for="item in services"
@@ -53,5 +54,7 @@ export default {
 </script>
 
 <style scoped>
-
+.cardRounded {
+  border-radius:15px;
+}
 </style>

@@ -35,7 +35,7 @@ export default {
      if (service.nameService === 'Localizador') {
        service.priceService = getLocatorPrice(service.detailService[0].amount);
      }
-     this.newServices.push(service);
+     this.newServices.unshift(service);
     },
     deleteQuotation (index) {
       this.newServices.splice(index,1);

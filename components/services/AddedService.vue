@@ -16,9 +16,6 @@
           <v-toolbar-title class="serviceTitle">{{typeService}} - {{nameService}}</v-toolbar-title>
           <v-spacer></v-spacer>
 
-          <v-btn class="mr-2" icon x-small>
-            <v-icon>mdi-pencil</v-icon>
-          </v-btn>
           <v-btn class="mr-0" icon small>
             <v-icon>mdi-menu-down</v-icon>
           </v-btn>

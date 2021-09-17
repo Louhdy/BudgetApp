@@ -1,6 +1,6 @@
 <template>
   <v-col>
-    <v-card elevation="1" outlined>
+    <v-card elevation="1" outlined class="cardRounded">
       <v-card-text class="pb-0">
         Cotización
       </v-card-text>
@@ -66,5 +66,7 @@ export default {
 </script>
 
 <style scoped>
-
+.cardRounded {
+  border-radius:15px;
+}
 </style>

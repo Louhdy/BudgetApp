@@ -7,7 +7,7 @@
       lazy-validation
     >
       <p class="mb-1">Seleccione un servicio</p>
-      <v-item-group v-model="activeItem" active-class="primary">
+      <v-item-group v-model="activeItem" active-class="selected">
         <v-container>
           <v-row>
             <v-col
@@ -53,7 +53,7 @@
         hide-details
       ></v-select>
       <v-card-text v-if="activeItem === 1 || !(selectedItem === null)" class="pa-0 pt-1"><p>Seleccione una de las opciones</p></v-card-text>
-      <v-item-group v-if="activeItem === 1 || !(selectedItem === null)" v-model="activeTracking" active-class="primary">
+      <v-item-group v-if="activeItem === 1 || !(selectedItem === null)" v-model="activeTracking" active-class="selected">
         <v-container>
           <v-row>
             <v-col
@@ -90,7 +90,7 @@
       <v-container v-if="activeItem === 1 || !(selectedItem === null)" class="pa-0">
         <v-row justify="end">
           <v-col class="mr-3" md="2">
-            <v-btn class="mt-1" color="primary" @click="addService">Agregar</v-btn>
+            <add-button @addButton="addService"></add-button>
           </v-col>
         </v-row>
       </v-container>
@@ -100,9 +100,11 @@
 
 <script>
 import {amountUserRules} from "~/helpers/validation";
+import AddButton from "~/components/services/AddButton";
 
 export default {
   name: "ProductivityApps",
+  components: {AddButton},
   data (){
     return {
       amountUsers: null,

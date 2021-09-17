@@ -2,22 +2,29 @@
   <v-app class="default">
     <v-app-bar
       absolute
-      color="blue"
+      color="primary"
       class="mt-6"
       fixed
       app
     >
-      <v-toolbar-title class="header" v-text="title" />
+      <v-img
+        :src="require('../static/logoEntel.png')"
+        contain
+        max-height="50"
+        max-width="70"
+      >
+      </v-img>
+      <v-toolbar-title class="header" v-text="title"></v-toolbar-title>
       <v-tabs
         v-model="tabSelected"
         centered
+        dark
         class="mr-10"
       >
         <v-tabs-slider color="white"></v-tabs-slider>
         <v-tab
           v-for="item in items"
           :key="item.name"
-          class="options"
         >
           {{ item.name }}
         </v-tab>
@@ -68,9 +75,6 @@ export default {
 .header{
   width: 200px;
   color: white;
-}
-.options{
-  color: #FFFFFF;
 }
 .default{
   background: white;
