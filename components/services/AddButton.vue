@@ -1,5 +1,5 @@
 <template>
-  <v-btn class="mt-1" color="secondary" @click="addService">Agregar</v-btn>
+  <v-btn class="mt-1" dark color="selected" @click="addService">Agregar</v-btn>
 </template>
 
 <script>
