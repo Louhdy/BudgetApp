@@ -1,6 +1,6 @@
 export const getInstanMessagePrice = (amountMessages) => {
   if (amountMessages === null) return null;
-  if (amountMessages < 5000) return amountMessages*0.055;
+  if (amountMessages <= 5000) return amountMessages*0.055;
   if ((amountMessages <= 10000) && (amountMessages > 5000)) return amountMessages*0.050;
   if ((amountMessages <= 25000) && (amountMessages > 10000)) return amountMessages*0.047;
   if ((amountMessages <= 50000) && (amountMessages > 25000)) return amountMessages*0.045;
